@@ -20,6 +20,43 @@
        		   method="execute">
      		<result name="success">/WEB-INF/account/crearCuenta.jsp</result>
 		</action>
+		
+		<action name="menu" 
+       		   class="com.action.CrearCuentaAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/bank/menu.jsp</result>
+		</action>
+		
+		<action name="deposito" 
+       		   class="com.action.DepositoAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/account/deposito.jsp</result>
+		</action>
+		
+		<action name="retiro" 
+       		   class="com.action.RetiroAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/account/retiro.jsp</result>
+		</action>
+		
+		<action name="consultarSaldo" 
+       		   class="com.action.ConsultarSaldoAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/consultation/consultarSaldo.jsp</result>
+		</action>
+		
+		<action name="consultarMovimientos" 
+       		   class="com.action.ConsultarMovimientosAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/consultation/consultarMovimientos.jsp</result>
+		</action>
+		
+		<action name="transferencia" 
+       		   class="com.action.TransferenciaAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/account/transferencia.jsp</result>
+		</action>
+		
 
     </package>
 </struts>

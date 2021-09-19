@@ -20,28 +20,28 @@
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Depósito</s:a>
+    <s:url var="deposito" action= "deposito"></s:url>
+    <s:a class="nav-link active" href="%{deposito}">Depósito</s:a>
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Retiro</s:a>
+    <s:url var="retiro" action= "retiro"></s:url>
+    <s:a class="nav-link active" href="%{retiro}">Retiro</s:a>
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Consultar saldo</s:a>
+    <s:url var="saldo" action= "consultarSaldo"></s:url>
+    <s:a class="nav-link active" href="%{saldo}">Consultar saldo</s:a>
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Consultar movimientos</s:a>
+    <s:url var="movimientos" action= "consultarMovimientos"></s:url>
+    <s:a class="nav-link active" href="%{movimientos}">Consultar movimientos</s:a>
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Transferencia</s:a>
+    <s:url var="transferencia" action= "transferencia"></s:url>
+    <s:a class="nav-link active" href="%{transferencia}">Transferencia</s:a>
   </li>
   
   <li class="nav-item">
