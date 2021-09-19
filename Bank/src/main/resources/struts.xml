@@ -6,20 +6,20 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 
-    <include file="example.xml"/>
-
     <package name="default" namespace="/" extends="struts-default">
 
-        <default-action-ref name="index"/>
+		<action name="login" 
+       		   class="com.action.LoginAction" 
+       		   method="execute">
+       		<result name="success">/WEB-INF/bank/menu.jsp</result>
+       		<result name="input">/index.jsp</result>
+       	</action>
 
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
-        </action>
+		<action name="crearCuenta" 
+       		   class="com.action.CrearCuentaAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/account/crearCuenta.jsp</result>
+		</action>
 
     </package>
-
-    <!-- Add addition packages and configuration here. -->
 </struts>
