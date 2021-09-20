@@ -12,12 +12,12 @@
 <body>
 	<h3 style="margin-left: 10px; color: blue;">Alta de cuenta</h3>
 	<s:actionmessage/>
-	<s:form action="crearCuenta" method="POST" style="margin: 10px;"> 
-		<s:textfield class="form-control" name="usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:password class="form-control" name="password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:password class="form-control" name="repassword" label="Re password" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:textfield class="form-control" name="montoinicial" label="Monto inicial" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:textfield class="form-control" name="telefono" label="Telefono" style="margin-bottom: 10px; margin-left: 5px;"/>
+	<s:form action="altaCuenta" method="POST" style="margin: 10px;"> 
+		<s:textfield class="form-control" name="cuenta.usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:password class="form-control" name="cuenta.password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:password class="form-control" name="cuenta.rePassword" label="Re password" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:textfield class="form-control" name="cuenta.montoInicial" label="Monto inicial" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:textfield class="form-control" name="cuenta.telefono" label="Telefono" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:submit type="button" class="btn btn-outline-primary" value="Enviar" style="margin-top: 10px;"/>
 	</s:form>
 	

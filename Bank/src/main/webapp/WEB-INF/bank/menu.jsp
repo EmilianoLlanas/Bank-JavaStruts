@@ -12,6 +12,7 @@
 </head>
 <body>
 <h2 style="margin-left: 10px; color: blue;">Mi banco en línea</h2>
+<s:actionmessage/>
 <ul class="nav flex-column" style="background-color: #fcfcfc; width: 25%">
 
   <li class="nav-item">
