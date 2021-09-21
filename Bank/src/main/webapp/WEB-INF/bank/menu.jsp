@@ -23,12 +23,14 @@
   </li>
   
   <li class="nav-item">
-    <s:url var="deposito" action= "deposito"></s:url>
+    <s:url var="deposito" action= "deposito"><s:param name="sum" value="true"/></s:url>
+    
     <s:a class="nav-link active" href="%{deposito}">Depósito</s:a>
   </li>
   
   <li class="nav-item">
-    <s:url var="retiro" action= "retiro"></s:url>
+    <s:url var="retiro" action= "retiro"><s:param name="sum" value="false"/></s:url>
+    
     <s:a class="nav-link active" href="%{retiro}">Retiro</s:a>
   </li>
   

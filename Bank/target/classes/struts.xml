@@ -35,14 +35,28 @@
 		
 		<action name="deposito" 
        		   class="com.action.DepositoAction" 
-       		   method="execute">
+       		   method="init">
      		<result name="success">/WEB-INF/account/deposito.jsp</result>
 		</action>
 		
 		<action name="retiro" 
-       		   class="com.action.RetiroAction" 
-       		   method="execute">
+       		   class="com.action.DepositoAction" 
+       		   method="init">
      		<result name="success">/WEB-INF/account/retiro.jsp</result>
+		</action>
+		
+		<action name="movimientoD" 
+       		   class="com.action.DepositoAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/bank/menu.jsp</result>
+     		<result name="input">/WEB-INF/account/deposito.jsp</result>
+		</action>
+		
+		<action name="movimientoR" 
+       		   class="com.action.DepositoAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/bank/menu.jsp</result>
+     		<result name="input">/WEB-INF/account/retiro.jsp</result>
 		</action>
 		
 		<action name="consultarSaldo" 

@@ -12,8 +12,9 @@
 <body>
 	<h3 style="margin-left: 10px; color: blue;">Retiro a cuenta</h3>
 	<s:actionmessage/>
-	<s:form action="retiro" method="POST" style="margin: 10px;"> 
-		<s:textfield class="form-control" name="nocuenta" label="No. de cuenta" style="margin-bottom: 10px; margin-left: 5px;"/>
+	<s:form action="movimientoR" method="POST" style="margin: 10px;"> 
+		<s:hidden name="sum"/>
+		<s:textfield class="form-control" name="noCuenta" label="No. de cuenta" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:textfield class="form-control" name="usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:password class="form-control" name="password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:textfield class="form-control" name="monto" label="Monto" style="margin-bottom: 10px; margin-left: 5px;"/>
