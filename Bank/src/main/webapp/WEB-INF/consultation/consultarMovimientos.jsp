@@ -12,10 +12,10 @@
 <body>
 <h3 style="margin-left: 10px; color: blue;">Consulta de movimientos</h3>
 	<s:actionmessage/>
-	<s:form action="consultarMovimientos" method="POST" style="margin: 10px;"> 
-		<s:textfield class="form-control" name="nocuenta" label="No. de cuenta" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:textfield class="form-control" name="usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
-		<s:password class="form-control" name="password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
+	<s:form action="consultarMovimientosTabla" method="POST" style="margin: 10px;"> 
+		<s:textfield class="form-control" name="cuenta.numCuenta" label="No. de cuenta" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:textfield class="form-control" name="cuenta.usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
+		<s:password class="form-control" name="cuenta.password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:submit type="button" class="btn btn-outline-primary" value="Enviar" style="margin-top: 10px;"/>
 	</s:form>
 	
