@@ -40,7 +40,6 @@ public class CrearCuentaAction extends ActionSupport implements SessionAware{
 			cuentas.put(0,cuentaOriginal);
 			session.put("listaCuentas", cuentas);
 		}
-		 cuentas = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
 		 
 		if(!("scott".equals(cuenta.getUsuario()) && "navy".equals(cuenta.getPassword()))) {
 			super.addActionMessage("Datos invalidos");

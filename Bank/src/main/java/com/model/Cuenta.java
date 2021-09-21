@@ -4,7 +4,7 @@ public class Cuenta {
 	private String usuario;
 	private String password;
 	private String rePassword;
-	private String montoInicial;
+	private int montoInicial;
 	private String telefono;
 	private int numCuenta;
 	
@@ -35,11 +35,13 @@ public class Cuenta {
 	}
 
 
-	public String getMontoInicial() {
+
+	public int getMontoInicial() {
 		return montoInicial;
 	}
 
-	public void setMontoInicial(String montoInicial) {
+	public void setMontoInicial(int montoInicial) {
+
 		this.montoInicial = montoInicial;
 	}
 
