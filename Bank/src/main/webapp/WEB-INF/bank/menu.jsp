@@ -12,12 +12,14 @@
 </head>
 <body>
 <h2 style="margin-left: 10px; color: blue;">Mi banco en línea</h2>
-<s:actionmessage/>
+<s:if test="hasActionMessages()">
+        <s:actionmessage/>
+</s:if>
 <ul class="nav flex-column" style="background-color: #fcfcfc; width: 25%">
 
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}">Crear cuenta</s:a>
+    <s:url var="newCuenta" action= "crearCuenta"></s:url>
+    <s:a class="nav-link active" href="%{newCuenta}">Crear cuenta</s:a>
   </li>
   
   <li class="nav-item">
