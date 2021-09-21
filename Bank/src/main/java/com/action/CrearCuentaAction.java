@@ -41,7 +41,6 @@ public class CrearCuentaAction extends ActionSupport implements SessionAware{
 			session.put("listaCuentas", cuentas);
 		}
 		 
-		 
 		if(!("scott".equals(cuenta.getUsuario()) && "navy".equals(cuenta.getPassword()))) {
 			super.addActionMessage("Datos invalidos");
 			return "input";

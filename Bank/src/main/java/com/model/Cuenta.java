@@ -35,11 +35,13 @@ public class Cuenta {
 	}
 
 
+
 	public int getMontoInicial() {
 		return montoInicial;
 	}
 
 	public void setMontoInicial(int montoInicial) {
+
 		this.montoInicial = montoInicial;
 	}
 
