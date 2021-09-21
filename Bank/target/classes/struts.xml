@@ -76,8 +76,14 @@
 		
 		<action name="consultarMovimientos" 
        		   class="com.action.ConsultarMovimientosAction" 
-       		   method="execute">
+       		   method="init">
      		<result name="success">/WEB-INF/consultation/consultarMovimientos.jsp</result>
+		</action>
+		
+			<action name="consultarMovimientosTabla" 
+       		   class="com.action.ConsultarMovimientosAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/consultation/consultarMovimientosTabla.jsp</result>
 		</action>
 		
 		<action name="transferencia" 

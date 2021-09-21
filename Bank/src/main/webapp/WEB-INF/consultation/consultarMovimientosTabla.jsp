@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Consulta de Saldo</title>
+<title>Tabla de movimientos</title>
 </head>
 <body>
 
@@ -13,20 +13,18 @@
 <table border="1">
 		<thead>
 			<tr>
-				<td> No Cuenta </td>
-				<td> Telefono </td>
-				<td> Saldo </td>
+				<td> Id Movimiento </td>
+				<td> Tipo </td>
+				<td> Monto </td>
 			
 			</tr>
 		</thead>
 		</tbody>
-		<s:iterator value="prueba" status="start">
+		<s:iterator value="listaPorCuentaMovimientos" status="start">
 			<tr>
-			<td> <s:property value="#start.count"/> </td>
 				<s:iterator value="value">
-					<td><s:property value="telefono"/></td>
-					<td><s:property value="numCuenta"/></td>
-					<td><s:property value="montoInicial"/></td>
+					<td><s:property value="tipo"/> </td>
+					<td><s:property value="saldo"/> </td>
 				</s:iterator>
 			</tr>
 		

@@ -33,8 +33,7 @@ public class ConsultarSaldoAction extends ActionSupport implements SessionAware{
 	
 	public String execute() {
 		HashMap <Integer,Cuenta> cuentas = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
-		
-			
+		//HashMap <Integer,Movimiento> movimientos = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
 			if(!(cuentas.containsKey(cuenta.getNumCuenta())))
 			{
 				super.addActionMessage("El numero de cuenta: "+cuenta.getNumCuenta()+" "+"no existe");
@@ -52,13 +51,13 @@ public class ConsultarSaldoAction extends ActionSupport implements SessionAware{
 				super.addActionMessage("El usuario "+cuenta.getUsuario()+" "+ "no existe");
 				return "data";
 			}
-			
-		
-		
 		cuenta= cuentas.get(cuenta.getNumCuenta());
 		System.out.println(cuenta.getNumCuenta());
 		System.out.println(cuenta.getTelefono());
 		System.out.println(cuenta.getMontoInicial());
+		
+		session.put("prueba", cuenta);
+		super.addActionMessage("Saldo de la cuenta con id: "+cuenta.getNumCuenta());
 		return "success";
 	}
 

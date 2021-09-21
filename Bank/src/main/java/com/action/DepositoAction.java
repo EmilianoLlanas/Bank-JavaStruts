@@ -5,7 +5,9 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.model.Cita;
 import com.model.Cuenta;
+import com.model.Movimiento;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DepositoAction  extends ActionSupport implements SessionAware {
@@ -15,7 +17,9 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 	private String usuario;
 	private String password;
 	private boolean sum;
+	private Movimiento movimiento;
 	
+
 	public int getNoCuenta() {
 		return noCuenta;
 	}
@@ -84,6 +88,15 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 	public String execute() {
 		HashMap <Integer,Cuenta> cuentas = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
 		
+		HashMap <Integer,Movimiento> movimientoss = (HashMap<Integer, Movimiento>) session.get("listaMovimientos");
+		
+		if(movimientoss==null)
+		{
+			movimientoss= new HashMap<Integer, Movimiento>();
+			
+			session.put("listaMovimientos", movimientoss);
+		}
+		
 		
 		if(!("scott".equals(usuario) && "navy".equals(password))) {
 			super.addActionMessage("Datos invalidos");
@@ -96,16 +109,51 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 		}
 		Cuenta cuenta= cuentas.get(noCuenta);
 		
+		int idMovi=movimientoss.size();
+		if(idMovi==0)
+		{
+			idMovi=1;
+		}
+		else
+		{
+			while(movimientoss.containsKey(idMovi)) {
+				idMovi++;
+			}
+		}
+		
+		
+	
+		movimiento= new Movimiento();
 		if(sum==true) {
 			cuenta.setMontoInicial(cuenta.getMontoInicial()+monto);
 			System.out.println(cuenta.getMontoInicial());
 			cuentas.put(noCuenta, cuenta);
+			movimiento.setIdCuentaMovimiento(noCuenta);
+			movimiento.setMonto(monto);
+			movimiento.setTipo("Deposito");
+			
+			System.out.println(movimiento.getIdCuentaMovimiento());
+			System.out.println(movimiento.getMonto());
+			System.out.println(movimiento.getTipo());
+			
+			movimientoss.put(idMovi, movimiento);
 			super.addActionMessage("Deposito exitoso");
 		}
 		else {
 			if(cuenta.getMontoInicial()>=monto) {
 				cuenta.setMontoInicial(cuenta.getMontoInicial()-monto);
 				System.out.println(cuenta.getMontoInicial());
+				
+				movimiento.setIdCuentaMovimiento(noCuenta);
+				movimiento.setMonto(monto*-1);
+				movimiento.setTipo("Retiro");
+				
+				System.out.println(movimiento.getIdCuentaMovimiento());
+				System.out.println(movimiento.getMonto());
+				System.out.println(movimiento.getTipo());
+				
+				movimientoss.put(idMovi, movimiento);
+				
 				cuentas.put(noCuenta, cuenta);
 				super.addActionMessage("Retiro exitoso");
 			}else {
@@ -118,5 +166,8 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 		
 		return "success";
 	}
+
+
+
 	
 }
