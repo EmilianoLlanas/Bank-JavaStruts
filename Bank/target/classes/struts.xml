@@ -17,13 +17,19 @@
 
 		<action name="crearCuenta" 
        		   class="com.action.CrearCuentaAction" 
-       		   method="execute">
+       		   method="init">
      		<result name="success">/WEB-INF/account/crearCuenta.jsp</result>
+		</action>
+		<action name="altaCuenta" 
+       		   class="com.action.CrearCuentaAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/bank/menu.jsp</result>
+     		<result name="input">/WEB-INF/account/crearCuenta.jsp</result>
 		</action>
 		
 		<action name="menu" 
        		   class="com.action.CrearCuentaAction" 
-       		   method="execute">
+       		   method="init">
      		<result name="success">/WEB-INF/bank/menu.jsp</result>
 		</action>
 		
