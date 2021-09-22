@@ -163,7 +163,7 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 			
 		}
 		
-		
+		session.put("listaMovimientos", movimientoss);
 		return "success";
 	}
 
