@@ -52,9 +52,7 @@ public class ConsultarSaldoAction extends ActionSupport implements SessionAware{
 				return "data";
 			}
 		cuenta= cuentas.get(cuenta.getNumCuenta());
-		System.out.println(cuenta.getNumCuenta());
-		System.out.println(cuenta.getTelefono());
-		System.out.println(cuenta.getMontoInicial());
+		
 		
 		session.put("prueba", cuenta);
 		super.addActionMessage("Saldo de la cuenta con id: "+cuenta.getNumCuenta());

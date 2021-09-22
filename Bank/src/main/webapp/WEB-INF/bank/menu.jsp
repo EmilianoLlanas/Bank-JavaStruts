@@ -52,8 +52,8 @@
   </li>
   
   <li class="nav-item">
-    <s:url var="cuenta" action= "crearCuenta"></s:url>
-    <s:a class="nav-link active" href="%{cuenta}" style="color: red;">Salir</s:a>
+    <s:url var="exit" action= "logout"></s:url>
+    <s:a class="nav-link active" href="%{exit}" style="color: red;">Salir</s:a>
   </li>
   
 </ul>

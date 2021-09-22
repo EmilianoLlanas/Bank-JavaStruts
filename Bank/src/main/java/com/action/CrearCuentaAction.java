@@ -37,6 +37,7 @@ public class CrearCuentaAction extends ActionSupport implements SessionAware{
 		if(cuentas==null) {
 			cuentas=new HashMap<Integer, Cuenta>();
 			Cuenta cuentaOriginal = new Cuenta();
+			
 			cuentas.put(0,cuentaOriginal);
 			session.put("listaCuentas", cuentas);
 		}
@@ -58,6 +59,7 @@ public class CrearCuentaAction extends ActionSupport implements SessionAware{
 				newIdCuenta++;
 			}
 			cuenta.setNumCuenta(newIdCuenta);
+			cuenta.setMontoInit(cuenta.getMontoInicial());
 		}
 		cuentas.put(cuenta.getNumCuenta(), cuenta);
 		super.addActionMessage("Alta de cuenta exitosa, No. de cuenta: "+cuenta.getNumCuenta());

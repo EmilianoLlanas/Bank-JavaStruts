@@ -10,6 +10,9 @@
 <body>
 
 <s:actionmessage/>
+<td>Saldo :
+	<s:property value="cuenta.montoInit"/>
+	</td>
 <table border="1">
 		<thead>
 			<tr>
@@ -31,8 +34,15 @@
 		
 	
 		</tbody>
+		
 	
 	</table>
+	
+	<td>Saldo actual:
+	<s:property value="cuenta.montoInicial"/>
+	</td>
+	
+	<br>
 	<s:url  var="menu" action="menu"> </s:url>
 	<s:a class="nav-link active" href="%{menu}" style="color: red;">Regresar</s:a>
 

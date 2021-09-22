@@ -48,9 +48,9 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 
 	public String execute() {
 		
-		
+		HashMap <Integer,Cuenta> cuentas = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
 		HashMap <Integer,Movimiento> movimientoss = (HashMap<Integer, Movimiento>) session.get("listaMovimientos");
-		System.out.println("size de movimientoss: "+movimientoss.size());
+	
 		
 		movList = (HashMap<Integer, Movimiento>) session.get("listaPorCuentaMovimientos");
 		
@@ -60,6 +60,27 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 			
 			session.put("listaPorCuentaMovimientos", movList);
 		}
+		
+		
+		if(!(cuentas.containsKey(cuenta.getNumCuenta())))
+		{
+			super.addActionMessage("El numero de cuenta: "+cuenta.getNumCuenta()+" "+"no existe");
+			return "data";
+		}
+		
+		if(!("navy".equals(cuenta.getPassword())))
+		{
+			super.addActionMessage("password incorrecto");
+			return "data";
+		}
+		
+		if(!("scott".equals(cuenta.getUsuario())))
+		{
+			super.addActionMessage("El usuario "+cuenta.getUsuario()+" "+ "no existe");
+			return "data";
+		}
+		
+		
 		movList.clear();
 		movimiento= new Movimiento();
 		int idMov=1;

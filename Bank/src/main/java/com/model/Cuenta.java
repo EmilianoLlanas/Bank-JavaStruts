@@ -7,7 +7,16 @@ public class Cuenta {
 	private int montoInicial;
 	private String telefono;
 	private int numCuenta;
+	private int montoInit;
 	
+	public int getMontoInit() {
+		return montoInit;
+	}
+
+	public void setMontoInit(int montoInit) {
+		this.montoInit = montoInit;
+	}
+
 	public String getUsuario() {
 		return usuario;
 	}
