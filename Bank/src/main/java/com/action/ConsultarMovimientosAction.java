@@ -111,7 +111,7 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 			System.out.println("hay "+movList.size()+" "+"movimientos");
 		}
 		
-		super.addActionMessage("nos vamos a consultar movimientos pa");
+		super.addActionMessage("Consulta de movimientos exitosa");
 		session.put("listaPorCuentaMovimientos", movList);
 		return "success";
 	}
