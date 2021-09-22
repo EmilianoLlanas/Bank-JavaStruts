@@ -126,15 +126,13 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 		movimiento= new Movimiento();
 		if(sum==true) {
 			cuenta.setMontoInicial(cuenta.getMontoInicial()+monto);
-			System.out.println(cuenta.getMontoInicial());
+			
 			cuentas.put(noCuenta, cuenta);
 			movimiento.setIdCuentaMovimiento(noCuenta);
 			movimiento.setMonto(monto);
 			movimiento.setTipo("Deposito");
 			
-			System.out.println(movimiento.getIdCuentaMovimiento());
-			System.out.println(movimiento.getMonto());
-			System.out.println(movimiento.getTipo());
+			
 			
 			movimientoss.put(idMovi, movimiento);
 			super.addActionMessage("Deposito exitoso");
@@ -142,15 +140,12 @@ public class DepositoAction  extends ActionSupport implements SessionAware {
 		else {
 			if(cuenta.getMontoInicial()>=monto) {
 				cuenta.setMontoInicial(cuenta.getMontoInicial()-monto);
-				System.out.println(cuenta.getMontoInicial());
+				
 				
 				movimiento.setIdCuentaMovimiento(noCuenta);
 				movimiento.setMonto(monto*-1);
 				movimiento.setTipo("Retiro");
 				
-				System.out.println(movimiento.getIdCuentaMovimiento());
-				System.out.println(movimiento.getMonto());
-				System.out.println(movimiento.getTipo());
 				
 				movimientoss.put(idMovi, movimiento);
 				

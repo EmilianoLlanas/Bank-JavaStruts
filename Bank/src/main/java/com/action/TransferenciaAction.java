@@ -116,8 +116,7 @@ public class TransferenciaAction extends ActionSupport implements SessionAware
 		{
 			cuentaOrigen.setMontoInicial(cuentaOrigen.getMontoInicial()-monto);
 			cuentaDestino.setMontoInicial(cuentaDestino.getMontoInicial()+monto);
-			System.out.println(cuentaOrigen.getMontoInicial());
-			System.out.println(cuentaDestino.getMontoInicial());
+			
 			//origen
 			movimientoOrigen.setIdCuentaMovimiento(cuentaOrigen.getNumCuenta());
 			movimientoOrigen.setMonto(monto*-1);

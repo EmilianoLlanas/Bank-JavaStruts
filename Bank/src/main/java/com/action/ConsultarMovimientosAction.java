@@ -92,24 +92,13 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 			if(cuenta.getNumCuenta()==(movimiento.getIdCuentaMovimiento()))
 			{
 			
-				System.out.println("movimiento: "+i);
-				System.out.println(movimiento.getIdCuentaMovimiento());
-				System.out.println(movimiento.getMonto());
-				System.out.println(movimiento.getTipo());
+				
 				movList.put(idMov, movimiento);
 				idMov++;
 			}
 			
 		}
-		
-		if(movList.size()==0)
-		{
-			System.out.println("la lista de movimientos esta vacia");
-		}
-		else
-		{
-			System.out.println("hay "+movList.size()+" "+"movimientos");
-		}
+	
 		
 		super.addActionMessage("Consulta de movimientos exitosa");
 		session.put("listaPorCuentaMovimientos", movList);
