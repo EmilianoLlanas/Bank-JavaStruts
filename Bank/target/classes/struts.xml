@@ -88,10 +88,16 @@
 		
 		<action name="transferencia" 
        		   class="com.action.TransferenciaAction" 
-       		   method="execute">
+       		   method="init">
      		<result name="success">/WEB-INF/account/transferencia.jsp</result>
 		</action>
 		
+		<action name="transferir" 
+       		   class="com.action.TransferenciaAction" 
+       		   method="execute">
+     		<result name="success">/WEB-INF/bank/menu.jsp</result>
+     		<result name="input">/WEB-INF/account/transferencia.jsp</result>
+		</action>
 
     </package>
 </struts>
