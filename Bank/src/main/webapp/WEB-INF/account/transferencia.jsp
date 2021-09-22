@@ -13,7 +13,7 @@
 
 <h3 style="margin-left: 10px; color: blue;">Transferencia</h3>
 	<s:actionmessage/>
-	<s:form action="transferencia" method="POST" style="margin: 10px;"> 
+	<s:form action="transferir" method="POST" style="margin: 10px;"> 
 		<s:textfield class="form-control" name="nocuentaOrigen" label="No. de cuenta origen" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:textfield class="form-control" name="usuario" label="Usuario" style="margin-bottom: 10px; margin-left: 5px;"/>
 		<s:password class="form-control" name="password" label="Password" style="margin-bottom: 10px; margin-left: 5px;"/>
