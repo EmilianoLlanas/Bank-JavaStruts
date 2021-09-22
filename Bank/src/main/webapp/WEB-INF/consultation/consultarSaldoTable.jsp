@@ -20,17 +20,16 @@
 			</tr>
 		</thead>
 		</tbody>
-		<s:iterator value="prueba" status="start">
+		
 			<tr>
-			<td> <s:property value="#start.count"/> </td>
-				<s:iterator value="value">
-					<td><s:property value="telefono"/></td>
-					<td><s:property value="numCuenta"/></td>
-					<td><s:property value="montoInicial"/></td>
-				</s:iterator>
+		
+					<td><s:property value="cuenta.numCuenta"/></td>
+					<td><s:property value="cuenta.telefono"/></td>
+					<td><s:property value="cuenta.montoInicial"/></td>
+				
 			</tr>
 		
-		</s:iterator>
+	
 		</tbody>
 	
 	</table>

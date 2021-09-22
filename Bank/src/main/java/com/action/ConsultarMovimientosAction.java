@@ -12,6 +12,19 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ConsultarMovimientosAction  extends ActionSupport implements SessionAware{
 	private Map<String, Object> session;
 	private Cuenta cuenta;
+	private HashMap <Integer,Movimiento> movList;
+	
+	
+	
+	
+	public HashMap<Integer, Movimiento> getMovList() {
+		return movList;
+	}
+
+	public void setMovList(HashMap<Integer, Movimiento> movList) {
+		this.movList = movList;
+	}
+
 	public Cuenta getCuenta() {
 		return cuenta;
 	}
@@ -34,19 +47,20 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 	}
 
 	public String execute() {
-		HashMap <Integer,Cuenta> cuentas = (HashMap<Integer, Cuenta>) session.get("listaCuentas");
+		
 		
 		HashMap <Integer,Movimiento> movimientoss = (HashMap<Integer, Movimiento>) session.get("listaMovimientos");
+		System.out.println("size de movimientoss: "+movimientoss.size());
 		
-		HashMap <Integer,Movimiento> listaMovimientos = (HashMap<Integer, Movimiento>) session.get("listaPorCuentaMovimientos");
+		movList = (HashMap<Integer, Movimiento>) session.get("listaPorCuentaMovimientos");
 		
-		if(listaMovimientos==null)
+		if(movList==null)
 		{
-			listaMovimientos= new HashMap<Integer, Movimiento>();
+			movList= new HashMap<Integer, Movimiento>();
 			
-			session.put("listaPorCuentaMovimientos", listaMovimientos);
+			session.put("listaPorCuentaMovimientos", movList);
 		}
-		
+		movList.clear();
 		movimiento= new Movimiento();
 		int idMov=1;
 		for(int i=1; i<=movimientoss.size();i++)
@@ -61,14 +75,23 @@ public class ConsultarMovimientosAction  extends ActionSupport implements Sessio
 				System.out.println(movimiento.getIdCuentaMovimiento());
 				System.out.println(movimiento.getMonto());
 				System.out.println(movimiento.getTipo());
-				listaMovimientos.put(idMov, movimiento);
+				movList.put(idMov, movimiento);
 				idMov++;
 			}
 			
 		}
 		
-		super.addActionMessage("nos vamos a consultar movimientos pa");
+		if(movList.size()==0)
+		{
+			System.out.println("la lista de movimientos esta vacia");
+		}
+		else
+		{
+			System.out.println("hay "+movList.size()+" "+"movimientos");
+		}
 		
+		super.addActionMessage("nos vamos a consultar movimientos pa");
+		session.put("listaPorCuentaMovimientos", movList);
 		return "success";
 	}
 

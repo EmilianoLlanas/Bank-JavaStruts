@@ -20,11 +20,12 @@
 			</tr>
 		</thead>
 		</tbody>
-		<s:iterator value="listaPorCuentaMovimientos" status="start">
+		<s:iterator value="movList" status="start">
 			<tr>
 				<s:iterator value="value">
+					<td> <s:property value="#start.count"/> </td>
 					<td><s:property value="tipo"/> </td>
-					<td><s:property value="saldo"/> </td>
+					<td><s:property value="monto"/> </td>
 				</s:iterator>
 			</tr>
 		
